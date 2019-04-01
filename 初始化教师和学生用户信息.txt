@@ -1,0 +1,9 @@
+drop table teacher;
+drop table student;
+create table teacher(username varchar2(20) not null primary key,password varchar2(20));
+insert into teacher values('admin','password');
+create table student(username varchar2(20) not null primary key,constraint student_fk1 foreign key(username) references s(sno),password varchar2(20));
+insert into student values('801','123456');
+commit;
+select * from teacher;
+select * from student;
